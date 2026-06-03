@@ -115,7 +115,7 @@ function CarDetailPage() {
 
           <h2 className="font-display text-2xl mt-12 mb-4">Equipaggiamento</h2>
           <ul className="grid sm:grid-cols-2 gap-2">
-            {car.highlights.map((h) => (
+            {car.highlights.map((h: string) => (
               <li
                 key={h}
                 className="flex items-start gap-2 text-sm text-foreground/90"
