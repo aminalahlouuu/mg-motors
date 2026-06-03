@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ForSaleRouteImport } from './routes/for-sale'
 import { Route as ContattiRouteImport } from './routes/contatti'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AutoSlugRouteImport } from './routes/auto.$slug'
 
 const ForSaleRoute = ForSaleRouteImport.update({
   id: '/for-sale',
@@ -28,35 +29,44 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AutoSlugRoute = AutoSlugRouteImport.update({
+  id: '/auto/$slug',
+  path: '/auto/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contatti': typeof ContattiRoute
   '/for-sale': typeof ForSaleRoute
+  '/auto/$slug': typeof AutoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contatti': typeof ContattiRoute
   '/for-sale': typeof ForSaleRoute
+  '/auto/$slug': typeof AutoSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contatti': typeof ContattiRoute
   '/for-sale': typeof ForSaleRoute
+  '/auto/$slug': typeof AutoSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contatti' | '/for-sale'
+  fullPaths: '/' | '/contatti' | '/for-sale' | '/auto/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contatti' | '/for-sale'
-  id: '__root__' | '/' | '/contatti' | '/for-sale'
+  to: '/' | '/contatti' | '/for-sale' | '/auto/$slug'
+  id: '__root__' | '/' | '/contatti' | '/for-sale' | '/auto/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContattiRoute: typeof ContattiRoute
   ForSaleRoute: typeof ForSaleRoute
+  AutoSlugRoute: typeof AutoSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +92,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auto/$slug': {
+      id: '/auto/$slug'
+      path: '/auto/$slug'
+      fullPath: '/auto/$slug'
+      preLoaderRoute: typeof AutoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContattiRoute: ContattiRoute,
   ForSaleRoute: ForSaleRoute,
+  AutoSlugRoute: AutoSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
