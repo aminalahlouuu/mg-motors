@@ -96,7 +96,7 @@ function CarDetailPage() {
 
         {gallery.length > 1 && (
           <div className="mt-4 grid grid-cols-5 gap-2 md:gap-3">
-            {gallery.map((img, idx) => (
+            {gallery.map((img: string, idx: number) => (
               <button
                 key={idx}
                 onClick={() => setActiveImg(idx)}
