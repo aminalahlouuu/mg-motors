@@ -7,13 +7,13 @@ import { CARS } from "@/data/cars";
 export const Route = createFileRoute("/for-sale")({
   head: () => ({
     meta: [
-      { title: "For Sale — Listino supercar | MG MOTORS" },
+      { title: "For Sale — Listino supercar in AED | MG MOTORS Dubai" },
       {
         name: "description",
         content:
-          "Tutte le supercar disponibili da MG MOTORS: Lamborghini, Porsche, Rolls-Royce, Bentley, Mercedes-AMG. Prezzi Km 0.",
+          "Tutte le supercar disponibili da MG MOTORS Al Quoz Dubai: Lamborghini, Porsche, Rolls-Royce, Range Rover, Bentley, Ferrari. Prezzi in AED, Brand New Km 0.",
       },
-      { property: "og:title", content: "Listino — MG MOTORS" },
+      { property: "og:title", content: "Listino — MG MOTORS Dubai" },
     ],
   }),
   component: ForSalePage,
@@ -39,12 +39,13 @@ function ForSalePage() {
     <SiteLayout>
       <section className="mx-auto max-w-7xl px-6 pt-16 pb-10">
         <p className="text-xs uppercase tracking-[0.4em] text-primary mb-4">
-          For Sale
+          For Sale · Al Quoz Dubai
         </p>
         <h1 className="font-display text-5xl md:text-6xl mb-4">Il nostro listino</h1>
         <p className="text-muted-foreground max-w-2xl">
-          {CARS.length} vetture disponibili. Tutte le auto sono Km 0 o usato
-          garantito, immediatamente disponibili in showroom.
+          {CARS.length} vetture disponibili. Brand New Km 0, usato garantito e
+          modelli da collezione, immediatamente disponibili nel nostro showroom
+          di Al Quoz, lungo la Sheikh Zayed Road. Prezzi in AED, IVA esclusa.
         </p>
       </section>
 

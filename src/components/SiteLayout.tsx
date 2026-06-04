@@ -77,8 +77,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               MG MOTORS
             </div>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Concessionaria di vetture sportive e di lusso. Selezione esclusiva
-              di supercar Km 0 e usato garantito.
+              Showroom di supercar e auto di lusso ad Al Quoz, Sheikh Zayed
+              Road, Dubai. Brand New Km 0 e modelli da collezione.
             </p>
           </div>
           <div>
@@ -97,10 +97,11 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </div>
           <div>
             <h4 className="text-sm uppercase tracking-[0.2em] text-foreground/80 mb-3">
-              Contatti
+              Showroom · Contatti
             </h4>
-            <p className="text-sm text-muted-foreground">
-              Per informazioni e appuntamenti:
+            <p className="text-sm text-muted-foreground mb-2">
+              Al Quoz, Sheikh Zayed Road<br />
+              Dubai — UAE
             </p>
             <a
               href="mailto:mgmotorsclients@gmail.com"
