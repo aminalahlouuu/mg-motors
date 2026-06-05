@@ -1,12 +1,28 @@
-
 export type Car = {
   slug: string;
   name: string;
   year: number;
   price: number; // in AED
   brand: string;
-  image: "/cars/lamborghini-revuelto-2025.jpg", Al Quoz — Dubai. Vettura nuova Km 0 con specifiche GCC, garanzia ufficiale e disponibilità immediata in showroom. Possibilità di export internazionale, finanziamento su misura e servizio concierge di consegna.`;
+  image: string;
+  gallery: string[];
+  km: number;
+  power: string;
+  engine: string;
+  transmission: string;
+  drivetrain: string;
+  acceleration: string;
+  topSpeed: string;
+  exterior: string;
+  interior: string;
+  fuel: string;
+  condition: string;
+  description: string;
+  highlights: string[];
+};
 
+const baseDesc = (name: string) =>
+  `${name} disponibile presso MG MOTORS, Al Quoz — Dubai. Vettura nuova Km 0 con specifiche GCC, garanzia ufficiale e disponibilità immediata in showroom. Possibilità di export internazionale, finanziamento su misura e servizio concierge di consegna.`;
 
 export const CARS: Car[] = [
   // ===================== LAMBORGHINI (15) =====================
