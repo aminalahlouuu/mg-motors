@@ -95,7 +95,7 @@ function CarDetailPage() {
         </div>
 
         {gallery.length > 1 && (
-          <div className="mt-4 grid grid-cols-5 gap-2 md:gap-3">
+          <div className="mt-4 grid grid-cols-2 gap-3">
             {gallery.map((img: string, idx: number) => (
               <button
                 key={idx}
