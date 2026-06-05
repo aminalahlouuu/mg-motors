@@ -45,11 +45,8 @@ export type Car = {
 const baseDesc = (name: string) =>
   `${name} disponibile presso MG MOTORS, Al Quoz — Dubai. Vettura nuova Km 0 con specifiche GCC, garanzia ufficiale e disponibilità immediata in showroom. Possibilità di export internazionale, finanziamento su misura e servizio concierge di consegna.`;
 
-// Helper to build a 2-image gallery from a single hero image.
-const g = (img: string, extras: string[] = []): string[] => {
-  const second = extras[0] ?? img;
-  return [img, second];
-};
+// Helper: una sola foto per macchina (l'hero).
+const g = (img: string, _extras: string[] = []): string[] => [img];
 
 export const CARS: Car[] = [
   // ===================== LAMBORGHINI (15) =====================
