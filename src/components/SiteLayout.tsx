@@ -114,6 +114,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} MG MOTORS. Tutti i diritti riservati.
         </div>
+        <div hidden>argen</div>
       </footer>
     </div>
   );
