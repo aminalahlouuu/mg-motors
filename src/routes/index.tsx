@@ -108,7 +108,7 @@ function HomePage() {
       {/* Brand strip */}
       <section className="border-y border-border bg-card/30">
         <div className="mx-auto max-w-7xl px-6 py-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-          {["Lamborghini", "Porsche", "Rolls-Royce", "Range Rover", "Bentley", "Mercedes-Benz", "Ferrari", "Aston Martin"].map((b) => {
+          {["Lamborghini", "Porsche", "Rolls-Royce", "Range Rover", "Bentley", "Mercedes-Benz", "Ferrari", "Aston Martin", "McLaren", "Bugatti", "Pagani", "Lotus", "Audi"].map((b) => {
             const n = brandCount(b);
             if (!n) return null;
             return (
