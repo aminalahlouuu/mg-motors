@@ -33,40 +33,74 @@ function HomePage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative min-h-[88vh] flex items-end overflow-hidden">
+      <section className="relative min-h-screen flex items-end overflow-hidden">
         <img
           src={heroImg}
-          alt="Lamborghini Revuelto nello showroom MG MOTORS Al Quoz Dubai"
+          alt="Lamborghini nera su Sheikh Zayed Road con skyline di Dubai — MG MOTORS Al Quoz"
           width={1920}
           height={1088}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/20" />
-        <div className="relative mx-auto max-w-7xl px-6 pb-20 md:pb-28">
-          <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-primary mb-5">
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
+        <div className="relative mx-auto max-w-7xl px-6 pb-24 md:pb-36 w-full">
+          <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-primary mb-6">
             <MapPin size={14} /> Al Quoz · Sheikh Zayed Road · Dubai
           </p>
-          <h1 className="font-display text-5xl md:text-7xl leading-[1.05] max-w-3xl text-foreground">
-            La tua prossima <span className="text-primary italic">supercar</span> ti aspetta.
+          <h1 className="font-display font-light text-5xl md:text-7xl lg:text-8xl leading-[1.02] max-w-4xl text-foreground">
+            La tua prossima<br />
+            <span className="text-primary italic font-normal">supercar</span> ti aspetta.
           </h1>
-          <p className="mt-6 max-w-xl text-base md:text-lg text-foreground/80">
-            MG MOTORS seleziona per te le vetture più ricercate al mondo.
+          <p className="mt-7 max-w-xl text-base md:text-lg text-foreground/85 leading-relaxed">
+            MG MOTORS seleziona le vetture più ricercate al mondo.
             Lamborghini, Porsche, Rolls-Royce, Bentley, Range Rover, Ferrari e
             Aston Martin — solo Brand New Km 0 e modelli da collezione.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap gap-4">
             <Link
               to="/for-sale"
-              className="inline-flex items-center px-7 py-3.5 bg-primary text-primary-foreground text-sm uppercase tracking-[0.2em] hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground text-sm uppercase tracking-[0.2em] hover:bg-primary/90 transition-all hover:scale-[1.02] shadow-lg shadow-primary/20"
             >
               Vedi il listino · {CARS.length} vetture
             </Link>
             <Link
               to="/contatti"
-              className="inline-flex items-center px-7 py-3.5 border border-foreground/30 text-foreground text-sm uppercase tracking-[0.2em] hover:border-primary hover:text-primary transition-colors"
+              className="inline-flex items-center px-8 py-4 border border-primary/50 text-foreground text-sm uppercase tracking-[0.2em] hover:bg-primary/10 hover:border-primary transition-all backdrop-blur-sm"
             >
               Visita lo showroom
             </Link>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary/60 text-[10px] uppercase tracking-[0.4em] animate-pulse hidden md:block">
+          Scorri ↓
+        </div>
+      </section>
+
+      {/* Intro / Manifesto */}
+      <section className="relative bg-background py-24 md:py-32">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <p className="text-xs uppercase tracking-[0.5em] text-primary mb-6">Dal 2010 · Dubai</p>
+          <h2 className="font-display text-3xl md:text-5xl leading-tight text-foreground mb-8">
+            L'arte di scegliere <span className="text-primary italic">l'eccellenza</span>, una vettura alla volta.
+          </h2>
+          <p className="text-base md:text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto">
+            Ogni auto nel nostro showroom è il risultato di una selezione
+            meticolosa: provenienza certificata, specifiche GCC ufficiali,
+            condizioni impeccabili. Non vendiamo automobili — costruiamo
+            relazioni con chi cerca la perfezione.
+          </p>
+          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-border max-w-3xl mx-auto">
+            {[
+              { n: CARS.length, l: "Vetture" },
+              { n: "12", l: "Marchi" },
+              { n: "100%", l: "Certificate" },
+              { n: "24h", l: "Risposta" },
+            ].map((s) => (
+              <div key={s.l} className="bg-background py-8 px-4">
+                <p className="font-display text-3xl md:text-4xl text-primary mb-1">{s.n}</p>
+                <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">{s.l}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
